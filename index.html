@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl-PL">
 
 <head>
 	<meta charset="UTF-8">
@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Fanatycy szopowatych</title>
-	<link rel="icon" href="resources/szop.png">
+	<link rel="icon" href="resources/szop.png" alt="Błąd wyświetlania obrazu">
 </head>
 
 <body>
@@ -18,14 +18,16 @@
 				<p style="font-family: Dekko; font-size: 15px">Uwaga są bardzo groźne!</p>
 			</div>
 			<div class="login-dataFields">
-				<label for="uname">
-					<p>Login</p>
-					<input type="text" placeholder="Podaj login" name="uname" required>
+				<label class="form__label" for="uname">
+					Login
 				</label>
-				<label for="psw">
-					<p>Hasło</p>
-    				<input type="password" placeholder="Hasło" name="psw" required>
+					<input type="text" placeholder="Podaj login" id="uname" required>
+			</div>
+			<div class="login-dataFields">
+				<label class="form__label" for="psw">
+					Hasło
 				</label>
+    				<input type="password" placeholder="Hasło" id="psw" required>
 				<button type="submit">Zaloguj</button>
 				<input class="checkboxPandas" type="checkbox" checked="checked" name="remember" disabled="disabled"> Pandy czerwone to szopowate
 				<!-- Pandy czerwone to zdecydowanie szopowate i nie zgadzam się z klasyfikacją ich jako pandki co sugeruje polska wikipedia, dlatego guzik jest wyszarzony -->
@@ -40,7 +42,7 @@
 			</div>
 		</div>
 		<div class="image">
-			<img src="resources/walczaceSzopowateNiePandki.jpg">
+			<img src="resources/walczaceSzopowateNiePandki.jpg" alt="Błąd wyświetlania obrazu">
 		</div>
 	</div>
 </body>

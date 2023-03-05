@@ -115,8 +115,8 @@ label{
 	transition: left 0.3s, opacity 0.3s;
 }
 
-label p{
-	margin: 0.5rem 0;
+.form__label{
+	display: inline-block;
 }
 
 input:hover,
