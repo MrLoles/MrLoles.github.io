@@ -12,10 +12,17 @@ document.addEventListener('DOMContentLoaded', function() {
 	let helper = "0";
 	let winner = "";
 	let player = "";
+  const one_player = document.getElementById("one_player");
 	
 	play.addEventListener("click", function() {
 		player = "human_play";
 		play_with.innerText = "Grasz z inną osobą";
+	})
+
+  one_player.addEventListener("click", function() {
+		player = "computer_play";
+		console.log(player);
+		play_with.innerText = "Grasz z komputerem";
 	})
 	
 	X.addEventListener("click", function() {
@@ -93,6 +100,30 @@ document.addEventListener('DOMContentLoaded', function() {
 		return;
 		} 
 	}) 	
+
+  function computer_move() {
+		if (winner == true) { console.log("sprawdzamy"); return; }
+		//if (document.querySelector("#statement").innerText.includes("Wygrana!")) { console.log("sprawdzamy"); return; }		// jesli jest wygrana to wyjdz i nie wykonuj kodu
+		if (document.querySelector("#statement").innerText.includes("Remis!")) { return;}
+		let new_td = "";
+		let new_td_tab = [];
+		for (i=0; i < all_td.length; i++){
+			if (all_td[i].innerText == "") {
+				new_td = all_td[i];
+				new_td_tab.push(new_td);
+			}
+		}
+		//console.log(new_td_tab.length);
+		let random_field = Math.floor((Math.random() * new_td_tab.length) + 1);
+		//console.log(random_field);
+		
+		if (helper === "X") {
+		new_td_tab[random_field-1].innerText = "0";
+		}
+		if (helper === "0") {
+		new_td_tab[random_field-1].innerText = "X";
+		}
+	}
 	
 	function wygrana(C)
 	{
