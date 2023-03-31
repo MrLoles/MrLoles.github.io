@@ -1,51 +1,79 @@
-.container {
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 48px;
-  }
-  
-  .board {
-    display: flex;
-    flex-wrap: wrap;
-    width: 300px;
-    height: 300px;
-    margin: 20px auto;
-    border: 2px solid black;
-  }
-  
-  .cell {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 96px;
-    height: 96px;
-    font-size: 72px;
-    border: 1px solid black;
-  }
-  
-  .cell:hover {
-    background-color: #eee;
-  }
-  
-  .cell.x {
-    color: red;
-  }
-  
-  .cell.o {
-    color: blue;
-  }
-  
-  #reset {
-    font-size: 24px;
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ccc;
-  }
-  
-  #reset:hover {
-    background-color: #ddd;
-  }
+:root{
+	--color-light: #f8f2ea;
+	--color-dark: #fff2e1;
+}
+
+body {
+	background: linear-gradient(
+		to top right, 
+		var(--color-dark),
+		var(--color-light));
+}
+
+.inline {
+	display: inline-block;
+	top: 0;
+	vertical-align: top;
+}
+
+#choose, #players, #resert_div {
+	width: 400px;
+	height: auto;
+	text-align: center;
+	border: 1px solid black;
+	padding: 20px 0;
+	margin: 7px 0;
+	background-color: white;
+}
+
+#one_player, #play, #reset {
+	padding: 5px;
+}
+
+#play_with, #you_choose {
+	margin: 20px;
+	font-size: 20px;
+}
+
+table{
+	max-width: 450px;
+	max-height: 450px;
+	margin: 5px auto;
+}
+
+td
+{
+	width: 150px;
+	height: 150px;
+	border: 1px solid black;
+	text-align: center;
+	font-size: 50px;
+	background-color: white;
+	border-radius: 5px;
+}
+
+#helper
+{
+	display: none;
+}
+
+#statement
+{
+	max-width: 450px;
+	height: 150px;
+	margin: 30px auto;
+	border: 1px solid black;
+	text-align: center;
+	font-size: 30px;
+	background-color: white;
+}
+
+@media screen and (max-width: 400px) {
+	.inline {
+		display: block;
+	}
+	
+	#choose, #players, #resert_div {
+		width: 100%;
+	}
+}
