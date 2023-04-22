@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1600px;
+    padding-left: 128px;
+    padding-right: 128px;
+    width: 100%;
+
+    @media (max-width: 1025px){
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+}
+
+section {
+    h2 {
+        text-align: center;
+        margin-bottom: 32px;
+        text-transform: uppercase;
+
+        color: #313131;
+        font-size: 21px;
+    }
+}
+
+.button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+
+    display: inline-block;
+    color: #FFF;
+    background-color: #FF9FDB;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 16px;
+    @media only screen and (max-width: 1024px){
+        font-size: 14px;
+    }
+
+    @media only screen and (max-width: 768px){
+        font-size: 12px;
+    }
+}
+
+header {
+    background-color: #12002F;
+    position: fixed;
+    color: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+
+    .container {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+            color: inherit;
+            text-transform: uppercase;
+            font-size: 32px;
+            font-weight: 900;
+
+            span {
+                font-weight: 600;
+            }
+        }
+
+        nav {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(4, auto);
+
+            @media only screen and (max-width: 768px){
+                display: none;
+            }
+
+            a {
+                color: inherit;
+                font-size: 20px;
+                text-decoration: none;
+
+            }
+        }
+    }
+}
+
+main {
+    section.banner {
+        color: #FFF;
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+
+        background-image: url(../images/szopik.jpg);
+        background-position: 50% 30%;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            background-color: #12002F;
+            opacity: 0.8;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+
+            h1 {
+                font-size: 42px;
+                margin-bottom: 32px;
+
+                span {
+                    color: #ff9fdb;
+                }
+            }
+
+            h3 {
+                font-size: 21px;
+                margin-bottom: 32px;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .services {
+        background-color: #EEE;
+
+        .container {
+            padding-top: 64px;
+            padding-bottom: 64px;
+
+
+
+            .services-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 16px;
+                
+                @media only screen and (max-width: 1024px){
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                @media only screen and (max-width: 768px){
+                    grid-template-columns: repeat(1, 1fr);
+                }
+
+                .service {
+                    background-color: #FFF;
+                    border-radius: 16px;
+                    overflow: hidden;
+                    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+
+                    .img-box {
+                        display: block;
+                        width: 100%;
+                        border-bottom: 5px solid #FF9FDB;
+
+
+                        .img {
+                            display: block;
+                            width: 100%;
+                            height: 128px;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .content {
+                        padding: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .projects {
+        padding-top: 64px;
+        padding-bottom: 64px;
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+
+            @media only screen and (max-width: 1024px){
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media only screen and (max-width: 768px){
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .project {
+                background-image: url(../images/strona.png);
+                background-size: cover;
+                border-radius: 8px;
+                overflow: hidden;
+                color: #FFF;
+
+                &:nth-child(2){
+                    background-image: url(../images/grasmieci.jpg);
+                }
+                &:nth-child(3){
+                    background-image: url(../images/minecraftmod.png);
+                }
+                &:nth-child(4){
+                    background-image: url(../images/religiaszop.jpeg);
+                }
+                &:nth-child(5){
+                    background-image: url(../images/mapaszopowa.png);
+                }
+                &:nth-child(6){
+                    background-image: url(../images/superraccoonbros.png);
+                }
+
+                .content {
+                    opacity: 0;
+                    transition: 0.4s;
+                    background-color: rgba(64, 40, 69, 0.8);
+                    padding: 16px;
+
+                    h3 {
+                        font-size: 32px;
+                        margin-bottom: 16px;
+                        @media only screen and (max-width: 1024px){
+                            font-size: 28px;
+                        }
+            
+                        @media only screen and (max-width: 768px){
+                            font-size: 22px;
+                        }
+                    }
+
+                    p {
+                        font-size: 18px;
+                        margin-bottom: 16px;
+                        @media only screen and (max-width: 1024px){
+                            font-size: 14px;
+                        }
+            
+                        @media only screen and (max-width: 768px){
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                &:hover {
+                    .content {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .center {
+            text-align: center;
+            margin-top: 15px;
+        }
+    }
+
+    .contact {
+        background-color: #9b75d7;
+
+        .container {
+            padding-top: 64px;
+            padding-bottom: 64px;
+
+            h2 {
+                color: #FFF;
+            }
+
+            form {
+                max-width: 680px;
+                display: block;
+                margin: 0 auto;
+
+                .form-grid {
+                    display: grid;
+                    gap: 16px;
+                    grid-template-columns: repeat(2, 1fr);
+                    margin-bottom: 16px;
+
+                    .form-element,
+                    .form-area {
+                        appearance: none;
+                        border: none;
+                        outline: none;
+                        background: none;
+
+                        display: block;
+                        width: 100%;
+                        background-color: #FFF;
+                        border-radius: 8px;
+
+                        padding: 16px;
+                        font-size: 20px;
+
+                        color: #12002F;
+
+                        &::placeholder {
+                            color: #8f8f8f;
+                        }
+                    }
+
+                    .form-area {
+                        grid-column: 1/-1;
+                    }
+                }
+                .right-align {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
